@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    container_name: portfolio_site
+    restart: always
+    ports:
+      - "5173:5000"
+    volumes:
+      - ./flask_session:/app/flask_session
+      - ./secret.key:/app/secret.key:ro
+    environment:
+      FLASK_DEBUG: "0"
+    command: python backend/main.py
