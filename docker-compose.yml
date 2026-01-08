@@ -12,3 +12,4 @@ services:
       - ./secret.key:/app/secret.key
     environment:
       FLASK_ENV: production
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
