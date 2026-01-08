@@ -7,16 +7,45 @@
 
     <title>Bernardo de Castro | Backend-Focused Full-Stack Developer</title>
 
-    <!-- CSS próprio (Flask) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- TODO: Retirar -->
+    <link rel="stylesheet" href="../src/css/main.css">
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-950 text-white">
 
-    <!-- HERO -->
+    <div data-animate id="modal" onclick="if(event.target === this) this.classList.add('hidden')"
+        class="fixed inset-0 bg-black/60 flex items-center justify-center hidden">
+        <div class="bg-gray-900 text-white rounded-xl p-6 w-full max-w-md">
+
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold">Contatos</h2>
+                <button id="closeModal" class="text-gray-400 hover:text-white">✕</button>
+            </div>
+
+            <ul class="space-y-3">
+                <li class="flex justify-between bg-gray-800 p-3 rounded-lg">
+                    <span>📧 Email</span>
+                    <span>bernardocmfgomes@gmail.com</span>
+                </li>
+
+                <li class="flex justify-between bg-gray-800 p-3 rounded-lg">
+                    <span>💬 WhatsApp</span>
+                    <span>(31) 99998-1418</span>
+                </li>
+
+                <li class="flex justify-between bg-gray-800 p-3 rounded-lg">
+                    <span>🔗 LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/bernardoxdev/"
+                        class="text-blue-400 hover:underline">Acessar</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
     <section class="min-h-screen flex items-center">
         <div class="max-w-5xl mx-auto px-6">
             <h1 class="text-4xl md:text-6xl font-bold leading-tight">
@@ -35,42 +64,61 @@
                     class="bg-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition">
                     Ver projetos
                 </a>
-                <a href="#contact"
-                    class="border border-gray-700 px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+                <a href="#contact" class="border border-gray-700 px-6 py-3 rounded-lg hover:bg-gray-800 transition">
                     Fale comigo
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SOBRE -->
-    <section class="py-24 bg-gray-900 text-gray-200">
-        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+    <section id="sobre" class="bg-gray-950 text-white py-20">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-            <div>
-                <h2 class="text-3xl font-bold mb-4">Sobre mim</h2>
-                <p class="text-gray-400 leading-relaxed">
-                    Sou desenvolvedor com foco em backend, especializado em Python,
-                    construção de APIs e integração com soluções de IA.
-                    Tenho experiência criando sistemas escaláveis, organizados
-                    e orientados a dados.
-                </p>
+
+
+        </div>
+    </section>
+
+    <section id="sobre" class="py-24 bg-gray-900 text-gray-200">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            
+            <div class="flex justify-center md:col-span-1">
+                <img src="../src/imgs/eu.jpeg" alt="Foto de Bernardo de Castro"
+                    class="w-64 h-64 object-cover rounded-2xl shadow-lg border border-gray-800">
             </div>
 
-            <div class="bg-gray-800 rounded-xl p-6">
-                <h3 class="font-semibold mb-4">Resumo rápido</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li>• Backend & APIs</li>
-                    <li>• Integração com IA</li>
-                    <li>• Arquitetura escalável</li>
-                    <li>• Código limpo e documentado</li>
-                </ul>
+            <div class="md:col-span-2">
+                <h2 class="text-3xl font-bold mb-4">Sobre mim</h2>
+
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Sou desenvolvedor <strong>backend-first</strong>, especializado em APIs,
+                    arquitetura escalável e integração com inteligência artificial.
+                    Trabalho principalmente com Python, bancos de dados e sistemas voltados
+                    para produção real.
+                </p>
+
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Atuo tanto no desenvolvimento quanto no ensino, criando soluções
+                    práticas envolvendo IA aplicada, NLP e integração de modelos em
+                    aplicações web modernas.
+                </p>
+
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <h3 class="font-semibold mb-4">Resumo rápido</h3>
+                    <ul class="grid grid-cols-2 gap-2 text-gray-400 text-sm">
+                        <li>• Backend & APIs</li>
+                        <li>• Integração com IA</li>
+                        <li>• Arquitetura escalável</li>
+                        <li>• Código limpo</li>
+                        <li>• Docker & Deploy</li>
+                        <li>• Projetos educacionais</li>
+                    </ul>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- COMPETÊNCIAS -->
     <section class="py-24 bg-gray-950">
         <div class="max-w-5xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12">Competências</h2>
@@ -105,15 +153,33 @@
         </div>
     </section>
 
-    <!-- PROJETOS -->
     <section id="projects" class="py-24 bg-gray-900">
         <div class="max-w-5xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12">Projetos</h2>
 
             <div class="grid md:grid-cols-2 gap-8">
 
-                <article class="bg-gray-800 rounded-xl p-6 hover:ring-1 hover:ring-indigo-500 transition">
+                <a class="bg-gray-800 rounded-xl p-6 hover:ring-1 hover:ring-indigo-500 transition"
+                    href="#">
                     <h3 class="text-xl font-semibold">Academic Flow</h3>
+                    <p class="text-gray-400 mt-2">
+                        Sistema acadêmico com API própria,
+                        autenticação JWT, processamento assíncrono
+                        e arquitetura modular.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mt-4 text-xs">
+                        <span class="bg-gray-700 px-2 py-1 rounded">Flask</span>
+                        <span class="bg-gray-700 px-2 py-1 rounded">HTML</span>
+                        <span class="bg-gray-700 px-2 py-1 rounded">CSS</span>
+                        <span class="bg-gray-700 px-2 py-1 rounded">JavaScript</span>
+                        <span class="bg-gray-700 px-2 py-1 rounded">Docker</span>
+                    </div>
+                </a>
+
+                <a class="bg-gray-800 rounded-xl p-6 hover:ring-1 hover:ring-indigo-500 transition"
+                    href="#">
+                    <h3 class="text-xl font-semibold">Academic Flow API</h3>
                     <p class="text-gray-400 mt-2">
                         Sistema acadêmico com API própria,
                         autenticação JWT, processamento assíncrono
@@ -126,13 +192,12 @@
                         <span class="bg-gray-700 px-2 py-1 rounded">PostgreSQL</span>
                         <span class="bg-gray-700 px-2 py-1 rounded">Docker</span>
                     </div>
-                </article>
+                </a>
 
             </div>
         </div>
     </section>
 
-    <!-- CONTATO -->
     <section id="contact" class="py-24 bg-gray-950 text-center">
         <h2 class="text-3xl font-bold mb-4">Vamos conversar?</h2>
         <p class="text-gray-400 mb-8">
@@ -140,20 +205,22 @@
         </p>
 
         <div class="flex justify-center gap-4">
-            <a href="mailto:seuemail@email.com"
-                class="bg-indigo-600 px-8 py-4 rounded-lg font-medium hover:bg-indigo-700 transition">
-                Entrar em contato
-            </a>
+            <button id="openModal"
+                class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+                Ver Contatos
+            </button>
 
-            <a href="https://github.com/seuusuario" target="_blank"
+
+            <a href="https://github.com/bernardoxdev" target="_blank"
                 class="border border-gray-700 px-8 py-4 rounded-lg hover:bg-gray-800 transition">
                 GitHub
             </a>
         </div>
     </section>
 
-    <!-- JS próprio -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- TODO: Retirar -->
+    <script src="../src/js/main.js"></script>
 
 </body>
 
