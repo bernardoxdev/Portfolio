@@ -5,11 +5,11 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY . /app
+COPY requirements.txt /app/requirements.txt
 
-RUN if [ -f backend/requirements.txt ]; then \
-        pip install --no-cache-dir -r backend/requirements.txt ; \
-    fi
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /app
 
 EXPOSE 5000
 
