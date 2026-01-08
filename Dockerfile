@@ -16,4 +16,4 @@ ENV PYTHONPATH=/app
 
 EXPOSE 5173
 
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "backend.main:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5173", "backend.main:app"]
